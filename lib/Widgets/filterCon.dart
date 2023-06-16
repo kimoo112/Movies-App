@@ -2,6 +2,7 @@
 
 import 'package:flutter/cupertino.dart';
 import 'package:movies/Constants/colors.dart';
+import 'package:movies/Constants/size.dart';
 
 class FilterCon extends StatelessWidget {
   const FilterCon({Key? key, required this.icon, required this.text}) : super(key: key);
@@ -10,8 +11,8 @@ class FilterCon extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 60,
-      height: 74,
+      width: KWidth(context)*.18,
+      height: KHieght(context)*.1,
 decoration: BoxDecoration(
   borderRadius: BorderRadius.circular(10),
   color: cgrey
@@ -29,3 +30,4 @@ decoration: BoxDecoration(
     );
   }
 }
+

@@ -21,10 +21,14 @@ void navigateToPR(Widget, context) => Navigator.pushReplacement(
         transitionDuration: const Duration(milliseconds: 800),
         pageBuilder: (context, animation, _) {
           return FadeTransition(
+
             opacity: animation,
             child: Widget,
+            
+
           );
         },
       ),
     );
+
    

@@ -3,10 +3,9 @@
 import 'package:flutter/material.dart';
 // ignore: unused_import
 import 'package:movies/Screens/Base/base.dart';
-
+import 'package:movies/Screens/Login/signup.dart';
 import 'Screens/Login/login.dart';
 import 'Screens/Splash/splashScreen.dart';
-
 
 void main() {
   runApp(const MyApp());
@@ -15,23 +14,24 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-       theme: ThemeData(
-          fontFamily: 'Poppins',
-          textTheme: const TextTheme(
-            titleLarge: TextStyle(
-              letterSpacing: 1,
-            ),
-          )),
-      title: 'Flutter Demo',
-   
-      home:
-      // SignUpScreen() 
-       SplashScreen(duration: 3, nextScreen: const LoginScreen()),
-    );
+        debugShowCheckedModeBanner: false,
+        theme: ThemeData(
+            fontFamily: 'Poppins',
+            textTheme: const TextTheme(
+              titleLarge: TextStyle(
+                letterSpacing: 1,
+              ),
+            )),
+        title: 'Movies App',
+        home:
+            // SignUpScreen()
+            TheBase(
+          userName: "Kimo",
+        )
+        //  SplashScreen(duration: 3, nextScreen: const LoginScreen()),
+        );
   }
 }
-

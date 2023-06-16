@@ -1,27 +1,26 @@
-// ignore_for_file: prefer_const_constructors, non_constant_identifier_names, prefer_const_literals_to_create_immutables, prefer_typing_uninitialized_variables, unused_import, use_key_in_widget_constructors
+// ignore_for_file: prefer_const_constructors, non_constant_identifier_names, prefer_const_literals_to_create_immutables, prefer_typing_uninitialized_variables
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:movies/Constants/size.dart';
 import 'package:movies/Widgets/EpisodesCon.dart';
-import 'package:movies/Widgets/animeStars.dart';
 import 'package:movies/Widgets/stars.dart';
 import '../../Constants/colors.dart';
 
-class DetailsScreen extends StatelessWidget {
-  const DetailsScreen(
-      {required this.plot,
+class DetailsContainer extends StatelessWidget {
+  const DetailsContainer(
+      {Key? key,
+      required this.plot,
       required this.image,
       required this.type,
-      required this.stars,
-      required this.episode1,
-      required this.episode2,
-      required this.episode3,
+      required this.episode1 ,
+      required this.episode2 ,
+     required  this.episode3 ,
       required this.episode1num,
       required this.episode2num,
-      required this.episode3num});
+      required this.episode3num})
+      : super(key: key);
   final plot;
-  final stars;
   final image;
   final episode1, episode1num;
   final episode2, episode2num;
@@ -35,11 +34,13 @@ class DetailsScreen extends StatelessWidget {
         backgroundColor: Colors.transparent,
         centerTitle: true,
         elevation: 0,
-        leading: IconButton(
-            onPressed: () {
-              Navigator.of(context).pop();
-            },
-            icon: Icon(CupertinoIcons.back)),
+        leading: 
+         IconButton(
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+              icon: Icon(CupertinoIcons.back)),
+        
       ),
       body: Stack(
         children: [
@@ -73,12 +74,11 @@ class DetailsScreen extends StatelessWidget {
               ],
             ),
           ),
-          // ! Movie Container
           Positioned(
             bottom: 0,
             child: Container(
                 width: KWidth(context),
-                height: KHieght(context) * .45,
+                height: KHieght(context)* .45,
                 decoration: BoxDecoration(
                     color: cmain,
                     borderRadius: BorderRadius.only(
@@ -93,9 +93,8 @@ class DetailsScreen extends StatelessWidget {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            // ! thats take a value i will send it from the model
-                            AnimeStars(
-                              starsValue: stars,
+                            Stars5(
+                              KStar5: CupertinoIcons.star,
                             ),
                           ],
                         ),

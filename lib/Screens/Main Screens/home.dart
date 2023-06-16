@@ -1,17 +1,39 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, prefer_typing_uninitialized_variables
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, prefer_typing_uninitialized_variables, unused_import
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:movies/Constants/colors.dart';
+import 'package:movies/Constants/size.dart';
+import 'package:movies/Models/homeModel.dart';
 import 'package:movies/Widgets/searchBar.dart';
 import 'package:lottie/lottie.dart';
 import '../../Widgets/filterCon.dart';
 import '../../Widgets/movieCon.dart';
 
-
-class Home extends StatelessWidget {
+class Home extends StatefulWidget {
   const Home({Key? key, required this.userName}) : super(key: key);
   final userName;
+
+  @override
+  State<Home> createState() => _HomeState();
+}
+
+late TabController taps;
+
+class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
+  @override
+  void initState() {
+    super.initState();
+    taps = TabController(length: 3, vsync: this);
+  }
+
+  @override
+  void dispose() {
+    // TODO: implement dispose
+    super.dispose();
+    taps.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -31,8 +53,9 @@ class Home extends StatelessWidget {
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
+                        
                         Text(
-                          "Hello $userName !",
+                          "Hello ${widget.userName} !",
                           style: const TextStyle(color: cwhite, fontSize: 21),
                         ),
                         const SizedBox(
@@ -112,11 +135,21 @@ class Home extends StatelessWidget {
                   scrollDirection: Axis.horizontal,
                   child: Row(
                     children: [
-                      MovieCon(),
-                      MovieCon(
-                        image: "assets/images/LaCasa poster2.webp",
-                      ),
-                      MovieCon(image: "assets/images/LaCasa poster3.webp"),
+                      for (int index = 0; index < HomeList.length; index++)
+                        MovieCon(
+                          detailsImg: HomeList[index].detailsImg,
+                          name: HomeList[index].type,
+                          stars: HomeList[index].stars,
+                          image: HomeList[index].image,
+                          plot: HomeList[index].plot,
+                          type: HomeList[index].type,
+                          episode1: HomeList[index].episode1,
+                          episode2: HomeList[index].episode2,
+                          episode3: HomeList[index].episode3,
+                          episode1num: HomeList[index].episode1num,
+                          episode2num: HomeList[index].episode2num,
+                          episode3num: HomeList[index].episode3num,
+                        ),
                     ],
                   ),
                 ),

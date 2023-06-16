@@ -1,12 +1,16 @@
 // ignore_for_file: prefer_const_constructors, unused_import, file_names, sized_box_for_whitespace, non_constant_identifier_names
 
+import 'package:awesome_snackbar_content/awesome_snackbar_content.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_animated_button/flutter_animated_button.dart';
+import 'package:movies/Constants/Size.dart';
 import 'package:movies/Screens/Base/base.dart';
 import 'package:movies/Screens/Login/signup.dart';
 
 import '../../Constants/colors.dart';
 import '../../Constants/navigate.dart';
+import '../../Widgets/textField.dart';
 
 class SignInScreen extends StatefulWidget {
   const SignInScreen({super.key});
@@ -18,18 +22,32 @@ class SignInScreen extends StatefulWidget {
 class _SignInScreenState extends State<SignInScreen> {
   bool showpassword = true;
   String userName = "Kimo";
+  TextEditingController passwordCT = TextEditingController();
+  TextEditingController emailCT = TextEditingController();
+  final passwordKey = GlobalKey<FormState>();
+  final emailKey = GlobalKey<FormState>();
 
+  final snackBar = SnackBar(
+    behavior: SnackBarBehavior.fixed,
+    elevation: 0,
+    backgroundColor: Colors.transparent,
+    content: AwesomeSnackbarContent(
+      color: credd,
+      title: 'Invalid Input',
+      message:
+          'Please check your email and password , If You dont have and account you can signup',
+      contentType: ContentType.warning,
+    ),
+  );
   @override
   Widget build(BuildContext context) {
-    final KHeight = MediaQuery.of(context).size.height;
-    final KWidth = MediaQuery.of(context).size.width;
     return Scaffold(
       backgroundColor: cmain,
       body: Stack(
         children: [
           Container(
-            width: KWidth,
-            height: KHeight,
+            width: KWidth(context),
+            height: KHieght(context),
             decoration: BoxDecoration(
               image: DecorationImage(
                 image: AssetImage(
@@ -59,94 +77,77 @@ class _SignInScreenState extends State<SignInScreen> {
                     child:
                         Image.asset("assets/images/popcorn 2.png", width: 10),
                   ),
-                  SizedBox(
-                    height: 20,
-                  ),
-                  Container(
-                    width: 300,
-                    height: 50,
-                    // color: Colors.black,
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(15), color: cgrey),
-                    child: TextField(
-                      cursorColor: cred,
-                      style: TextStyle(
-                        color: Colors.white,
-                      ),
-                      textInputAction: TextInputAction.next,
-                      keyboardType: TextInputType.emailAddress,
-                      decoration: InputDecoration(
-                        hintText: "Email",
-                        hintStyle: TextStyle(color: Colors.white38),
-                        prefixIcon: Icon(
-                          Icons.email_outlined,
-                          color: cred,
-                        ),
-                        border: InputBorder.none,
-                      ),
+                  TextFieldWi(
+                    controller: emailCT,
+                    icon2: Container(
+                      width: 0,
                     ),
+                    errorName: "Enter Your Email",
+                    formKey: emailKey,
+                    hintText: "Email",
+                    icon: CupertinoIcons.mail_solid,
+                    type: TextInputType.emailAddress,
                   ),
                   SizedBox(
-                    height: 20,
+                    height: 5,
                   ),
-                  Container(
-                    width: 300,
-                    height: 50,
-                    // color: Colors.black,
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(15), color: cgrey),
-                    child: TextField(
-                      cursorColor: cred,
-                      style: TextStyle(
-                        color: Colors.white,
-                      ),
-                      obscureText: showpassword,
-                      decoration: InputDecoration(
-                          hintText: "Password",
-                          hintStyle: TextStyle(color: Colors.white38),
-                          prefixIcon: Icon(
-                            Icons.lock,
-                            color: cred,
-                          ),
-                          suffixIcon: IconButton(
-                              onPressed: () {
-                                setState(() {
-                                  showpassword = !showpassword;
-                                });
-                              },
-                              icon: Icon(
-                                  showpassword
-                                      ? CupertinoIcons.eye_slash
-                                      : CupertinoIcons.eye,
-                                  color: cred)),
-                          border: InputBorder.none),
-                    ),
+                  TextFieldWi(
+                    controller: passwordCT,
+                    icon2: IconButton(
+                        onPressed: () {
+                          setState(() {
+                            showpassword = !showpassword;
+                          });
+                        },
+                        icon: Icon(
+                            showpassword
+                                ? CupertinoIcons.eye_slash
+                                : CupertinoIcons.eye,
+                            color: cred)),
+                    errorName: "Enter Your Password",
+                    formKey: passwordKey,
+                    hintText: "Password",
+                    password: showpassword,
+                    icon: CupertinoIcons.lock_fill,
+                    type: TextInputType.emailAddress,
                   ),
                   SizedBox(
-                    height: 20,
+                    height: 5,
                   ),
-                  GestureDetector(
-                    onTap: () => navigateToPR(
-                        TheBase(
-                          userName: userName,
-                        ),
-                        context),
-                    child: Container(
-                      width: 300,
-                      height: 50,
-                      // ignore: sort_child_properties_last
-                      child: Center(
-                          child: Text(
-                        "SIGN IN",
-                        style: TextStyle(
-                            color: cwhite,
-                            fontWeight: FontWeight.w600,
-                            fontSize: 22,
-                            letterSpacing: 1),
-                      )),
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(15), color: cred),
+                  AnimatedButton(
+                    width: 280,
+                    text: 'SIGN UP',
+                    borderRadius: 15,
+                    selectedGradientColor: LinearGradient(
+                      colors: [
+                        cwhite,
+                        cwhitee,
+                      ],
                     ),
+                    selectedTextColor: cred,
+                    selectedBackgroundColor: cwhite,
+                    backgroundColor: cred,
+                    animationDuration: Duration(milliseconds: 1000),
+                    transitionType: TransitionType.CENTER_LR_OUT,
+                    textStyle: TextStyle(
+                        fontSize: 28,
+                        color: cwhite,
+                        letterSpacing: 1,
+                        fontWeight: FontWeight.w300),
+                    onPress: () {
+                      if (passwordCT.text.toLowerCase() == "kimo12" &&
+                          emailCT.text.toLowerCase() == "kimo12@gmail.com") {
+                        navigateToPR(
+                            TheBase(
+                              userName: userName,
+                            ),
+                            context);
+                      } else {
+                        ScaffoldMessenger.of(context)
+                          ..hideCurrentSnackBar()
+                          ..showSnackBar(snackBar);
+                      }
+                    },
                   ),
                   SizedBox(
                     height: 20,
@@ -158,7 +159,6 @@ class _SignInScreenState extends State<SignInScreen> {
                           style: TextStyle(color: cwhite, fontSize: 15)),
                       TextButton(
                           onPressed: () {
-                            //Navigate Kimo To a Sign Up Screen
                             navigateToPR(SignUpScreen(), context);
                           },
                           child: Text("Sign Up",
