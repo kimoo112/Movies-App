@@ -1,6 +1,7 @@
 // ignore_for_file: file_names, prefer_const_constructors, prefer_typing_uninitialized_variables, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../Constants/colors.dart';
 import '../Screens/Details/details.dart';
@@ -52,9 +53,9 @@ class MovieCon extends StatelessWidget {
         );
       },
       child: Container(
-        margin: EdgeInsets.all(10),
-        width: 209,
-        height: 370,
+        margin: EdgeInsets.all(10.sp),
+        width: 209.sp,
+        height: 370.sp,
         decoration: BoxDecoration(
           
             image: DecorationImage(

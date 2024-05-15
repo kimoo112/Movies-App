@@ -42,8 +42,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
     content: AwesomeSnackbarContent(
       title: 'THE PASSWORD !',
       color: credd,
-      message:
-          'Make sure the password matches the confirm password!',
+      message: 'Make sure the password matches the confirm password!',
 
       /// change contentType to ContentType.success, ContentType.warning or ContentType.help for variants
       contentType: ContentType.failure,
@@ -63,9 +62,18 @@ class _SignUpScreenState extends State<SignUpScreen> {
   }
 
   @override
+  void dispose() {
+    usernameCT.dispose();
+    emailCT.dispose();
+    passwordCT.dispose();
+    conPasswordCT.dispose();
+    super.dispose();
+    
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: cmain,
       body: Stack(
         children: [
           Container(
@@ -166,59 +174,61 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     height: 10,
                   ),
                   GestureDetector(
-                    onTap: () {
-                      if (userNameKey.currentState!.validate() &&
-                          emailKey.currentState!.validate() &&
-                          passwordKey.currentState!.validate() &&
-                          conPasswordKey.currentState!.validate() &&
-                          (passwordCT.text == conPasswordCT.text)) {
-                        navigateToPR(
-                            TheBase(
-                              userName: userName,
-                            ),
-                            context);
-                      }
-                      else if(passwordCT.text != conPasswordCT.text) {
-                        ScaffoldMessenger.of(context)
-                          ..hideCurrentSnackBar()
-                          ..showSnackBar(snackBar);
-                      }
-                    },
-                    
-                    child:  AnimatedButton(
-                width: 280,
-                text: 'SIGN UP',
-                borderRadius: 15,
-                selectedGradientColor: LinearGradient(colors: [cwhite,cwhitee,],),
-                selectedTextColor:  cred,
-                selectedBackgroundColor: cwhite,
-                backgroundColor: cred,
-                animationDuration:Duration( milliseconds:700 ),
-                transitionType: TransitionType.CENTER_LR_OUT,
-                textStyle: TextStyle(
-                    fontSize: 28,
-                    color: cwhite,
-                    letterSpacing: 1,
-                    fontWeight: FontWeight.w300), onPress: () { 
-                       if (userNameKey.currentState!.validate() &&
-                          emailKey.currentState!.validate() &&
-                          passwordKey.currentState!.validate() &&
-                          conPasswordKey.currentState!.validate() &&
-                          (passwordCT.text == conPasswordCT.text)) {
-                         navigateToPR(
-                            TheBase(
-                              userName: userName,
-                            ),
-                            context);
-                      }
-                      else if(passwordCT.text != conPasswordCT.text) {
-                        ScaffoldMessenger.of(context)
-                          ..hideCurrentSnackBar()
-                          ..showSnackBar(snackBar);
-                      }
-                     },
-              )
-                  ),
+                      onTap: () {
+                        if (userNameKey.currentState!.validate() &&
+                            emailKey.currentState!.validate() &&
+                            passwordKey.currentState!.validate() &&
+                            conPasswordKey.currentState!.validate() &&
+                            (passwordCT.text == conPasswordCT.text)) {
+                          navigateToPR(
+                              TheBase(
+                                userName: userName,
+                              ),
+                              context);
+                        } else if (passwordCT.text != conPasswordCT.text) {
+                          ScaffoldMessenger.of(context)
+                            ..hideCurrentSnackBar()
+                            ..showSnackBar(snackBar);
+                        }
+                      },
+                      child: AnimatedButton(
+                        width: 280,
+                        text: 'SIGN UP',
+                        borderRadius: 15,
+                        selectedGradientColor: LinearGradient(
+                          colors: [
+                            cwhite,
+                            cwhitee,
+                          ],
+                        ),
+                        selectedTextColor: cred,
+                        selectedBackgroundColor: cwhite,
+                        backgroundColor: cred,
+                        animationDuration: Duration(milliseconds: 700),
+                        transitionType: TransitionType.CENTER_LR_OUT,
+                        textStyle: TextStyle(
+                            fontSize: 28,
+                            color: cwhite,
+                            letterSpacing: 1,
+                            fontWeight: FontWeight.w300),
+                        onPress: () {
+                          if (userNameKey.currentState!.validate() &&
+                              emailKey.currentState!.validate() &&
+                              passwordKey.currentState!.validate() &&
+                              conPasswordKey.currentState!.validate() &&
+                              (passwordCT.text == conPasswordCT.text)) {
+                            navigateToPR(
+                                TheBase(
+                                  userName: userName,
+                                ),
+                                context);
+                          } else if (passwordCT.text != conPasswordCT.text) {
+                            ScaffoldMessenger.of(context)
+                              ..hideCurrentSnackBar()
+                              ..showSnackBar(snackBar);
+                          }
+                        },
+                      )),
                   SizedBox(
                     height: 20,
                   ),

@@ -35,7 +35,7 @@ class _AnimeStarsState extends State<AnimeStars> {
           starCount: 5,
           starSize: 25,
           valueLabelColor: const Color(0xff9b9b9b),
-          valueLabelTextStyle: const TextStyle(
+          valueLabelTextStyle:  TextStyle(
               color: cmain,
               fontWeight: FontWeight.w400,
               fontStyle: FontStyle.normal,

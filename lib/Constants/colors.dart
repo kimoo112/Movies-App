@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-const cmain = Color(0xFF10111A);
-
+const cmain =  Color(0xFF10111A) ;
+const cmain2 = Color.fromARGB(255, 181, 181, 184);
 const cdark = Color(0xFF070707);
 const cblack = Color(0xFF09090F);
 const cblack2 = Color(0xFF191919);

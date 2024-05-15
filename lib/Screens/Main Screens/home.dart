@@ -1,10 +1,16 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, prefer_typing_uninitialized_variables, unused_import
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, prefer_typing_uninitialized_variables, unused_import, unnecessary_import
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 import 'package:movies/Constants/colors.dart';
+import 'package:movies/Constants/navigate.dart';
 import 'package:movies/Constants/size.dart';
+import 'package:movies/Constants/theme.dart';
 import 'package:movies/Models/homeModel.dart';
+import 'package:movies/Screens/Login/signin.dart';
+import 'package:movies/Screens/Main%20Screens/profile.dart';
 import 'package:movies/Widgets/searchBar.dart';
 import 'package:lottie/lottie.dart';
 import '../../Widgets/filterCon.dart';
@@ -29,7 +35,6 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
 
   @override
   void dispose() {
-    // TODO: implement dispose
     super.dispose();
     taps.dispose();
   }
@@ -37,8 +42,8 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: AppTheme.isDark?cmain:cmain2,
       extendBodyBehindAppBar: true,
-      backgroundColor: cmain,
       body: SizedBox(
         width: double.infinity,
         child: Padding(
@@ -53,7 +58,6 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        
                         Text(
                           "Hello ${widget.userName} !",
                           style: const TextStyle(color: cwhite, fontSize: 21),
@@ -68,7 +72,20 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
                         ),
                       ],
                     ),
-                    Lottie.asset('assets/images/Home.json', width: 100),
+                    GestureDetector(
+                        onTap: () {
+                          // GetTo(SignInScreen(), Transition.fadeIn,
+                          //     Duration(seconds: 2), context);
+                          // getTo(SignInScreen(), Transition.fadeIn, 2,context);
+                          // Get.to(SignInScreen(),
+                          //     transition: Transition.fadeIn,
+                          //     duration: Duration(seconds: 2));
+                          setState(() {
+                            AppTheme.isDark = !AppTheme.isDark;
+                          });
+                        },
+                        child: Lottie.asset('assets/images/Home.json',
+                            width: 100)),
                   ],
                 ),
                 const SizedBox(
@@ -93,9 +110,16 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
                       text: "Genre",
                       icon: CupertinoIcons.collections,
                     ),
-                    FilterCon(
-                      text: "Top IMDB",
-                      icon: CupertinoIcons.star_fill,
+                    GestureDetector(
+                      onTap: () {
+                         setState(() {
+                            AppTheme.isDark = !AppTheme.isDark;
+                          });
+                      },
+                      child: FilterCon(
+                        text: "Top IMDB",
+                        icon: CupertinoIcons.star_fill,
+                      ),
                     ),
                     FilterCon(
                       text: "Language",
@@ -134,6 +158,7 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
                 SingleChildScrollView(
                   scrollDirection: Axis.horizontal,
                   child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
                       for (int index = 0; index < HomeList.length; index++)
                         MovieCon(

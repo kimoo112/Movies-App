@@ -2,6 +2,7 @@
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:movies/Constants/colors.dart';
 
 class EpisodesCon extends StatelessWidget {
@@ -19,8 +20,8 @@ class EpisodesCon extends StatelessWidget {
     return Padding(
       padding: EdgeInsets.fromLTRB(10, 10, 20, 10),
       child: Container(
-        width: 120,
-        height: 150,
+        width: 120.sp,
+        height: 150.sp,
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(15),
             image: DecorationImage(
@@ -41,11 +42,11 @@ class EpisodesCon extends StatelessWidget {
             children: [
               Text(
                 "Episode $episodeNum",
-                style: const TextStyle(color: cwhite, fontSize: 10.5),
+                style:  TextStyle(color: cwhite, fontSize: 10.5.sp),
               ),
               Text(
                 episodeName,
-                style: const TextStyle(color: cwhite, fontSize: 10.5),
+                style:  TextStyle(color: cwhite, fontSize: 10.5.sp),
               ),
             ],
           ),

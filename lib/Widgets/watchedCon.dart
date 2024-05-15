@@ -2,6 +2,7 @@
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:movies/Constants/colors.dart';
 import 'package:movies/Constants/navigate.dart';
 import 'package:movies/Screens/Details/details.dart';
@@ -59,8 +60,8 @@ class WatchedCon extends StatelessWidget {
           children: [
             Container(
               margin: EdgeInsets.fromLTRB(25, 11, 20, 22),
-              width: 150,
-              height: 220,
+              width: 150.sp,
+              height: 220.sp,
               decoration: BoxDecoration(
                 boxShadow: [
                   BoxShadow(
@@ -70,12 +71,12 @@ offset: Offset(3, 2),
 spreadRadius: 3
                   )
                 ],
-                  borderRadius: BorderRadius.circular(25),
+                  borderRadius: BorderRadius.circular(25.sp),
                   image: DecorationImage(
                       image: AssetImage(image), fit: BoxFit.cover)),
             ),
             SizedBox(
-              width: 15,
+              width: 15.sp,
             ),
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -93,18 +94,18 @@ spreadRadius: 3
                   ]
                   ),
                   child: Text(wName,
-                      style: const TextStyle(color: cwhite, fontSize: 20)),
+                      style:  TextStyle(color: cwhite, fontSize: 20.sp)),
                 ),
-                const SizedBox(height: 15),
+                 SizedBox(height: 15.sp),
                 Stars5(
                   KStar5: CupertinoIcons.star,
                 ),
-                const SizedBox(height: 15),
+                SizedBox(height: 15.sp),
                 Row(
                   children: [
                     Text(
                       wType,
-                      style: const TextStyle(color: cwhite, fontSize: 15),
+                      style:  TextStyle(color: cwhite, fontSize: 15.sp),
                     ),
                   ],
                 ),
@@ -114,12 +115,13 @@ spreadRadius: 3
                     Icon(
                       CupertinoIcons.time,
                       color: cwhite,
+                      size: 22.sp,
                     ),
                     SizedBox(
-                      width: 5,
+                      width: 5.sp,
                     ),
                     Text("$wMint Minutes",
-                        style: const TextStyle(color: cwhite, fontSize: 15)),
+                        style:  TextStyle(color: cwhite, fontSize: 15.sp)),
                   ],
                 )
               ],

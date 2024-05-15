@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:movies/Constants/navigate.dart';
 
 import '../../Constants/colors.dart';
+import '../../Constants/theme.dart';
 import '../../Models/watched_model.dart';
 import '../../Widgets/watchedCon.dart';
 import '../Details/details.dart';
@@ -15,7 +16,8 @@ class WatchedScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: cmain,
+      backgroundColor: AppTheme.isDark?cmain:cmain2,
+
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         title: Text(

@@ -56,6 +56,7 @@ class SearchTextField extends StatelessWidget {
             // Lottie.asset('assets/images/94375-search-new.json',width: 5),
             Icon(
           CupertinoIcons.search,
+          
           color: cwhite,
         ),
         focusedBorder: OutlineInputBorder(
@@ -70,7 +71,9 @@ class SearchTextField extends StatelessWidget {
         filled: true,
         fillColor: cgrey,
         border: OutlineInputBorder(
-          
+          borderSide: BorderSide(width: 0,color: cred),
+            
+
           borderRadius: BorderRadius.circular(20),
         ),
       ),

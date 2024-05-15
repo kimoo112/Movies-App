@@ -9,6 +9,7 @@ import 'package:movies/Widgets/animeStars.dart';
 import 'package:movies/Widgets/searchBar.dart';
 
 import '../../Constants/colors.dart';
+import '../../Constants/theme.dart';
 
 class SearchScreen extends StatefulWidget {
   const SearchScreen({Key? key}) : super(key: key);
@@ -21,7 +22,8 @@ class _SearchScreenState extends State<SearchScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: cmain,
+      backgroundColor: AppTheme.isDark?cmain:cmain2,
+
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         title: Text(

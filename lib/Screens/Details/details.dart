@@ -2,6 +2,7 @@
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:movies/Constants/size.dart';
 import 'package:movies/Widgets/EpisodesCon.dart';
 import 'package:movies/Widgets/animeStars.dart';
@@ -31,135 +32,147 @@ class DetailsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       extendBodyBehindAppBar: true,
-      appBar: AppBar(
-        backgroundColor: Colors.transparent,
-        centerTitle: true,
-        elevation: 0,
-        leading: IconButton(
-            onPressed: () {
-              Navigator.of(context).pop();
-            },
-            icon: Icon(CupertinoIcons.back)),
-      ),
-      body: Stack(
-        children: [
-          SingleChildScrollView(
-            child: Column(
-              children: [
-                Container(
-                    width: KWidth(context),
-                    height: KHieght(context),
-                    decoration: BoxDecoration(
-                      image: DecorationImage(
-                        image: AssetImage(
-                          image,
-                        ),
-                        fit: BoxFit.cover,
-                      ),
-                    ),
-                    child: Align(
-                        alignment: Alignment.bottomLeft,
-                        child: Container(
-                          decoration: BoxDecoration(
-                            gradient: LinearGradient(
-                                colors: [
-                                  Color.fromARGB(85, 0, 0, 0),
-                                  cblack.withOpacity(.5),
-                                ],
-                                begin: Alignment.topCenter,
-                                end: Alignment.bottomCenter),
-                          ),
-                        ))),
-              ],
-            ),
-          ),
-          // ! Movie Container
-          Positioned(
-            bottom: 0,
-            child: Container(
-                width: KWidth(context),
-                height: KHieght(context) * .45,
-                decoration: BoxDecoration(
-                    color: cmain,
+      // appBar: AppBar(
+      //   backgroundColor: Colors.transparent,
+      //   centerTitle: true,
+      //   elevation: 0,
+      //   leading: IconButton(
+      //       onPressed: () {
+      //         Navigator.of(context).pop();
+      //       },
+      //       icon: Icon(CupertinoIcons.back)),
+      // ),
+      body: CustomScrollView(
+        shrinkWrap: true,
+        slivers: [
+          SliverAppBar(
+            bottom: PreferredSize(
+                preferredSize: Size.fromHeight(0),
+                child: Container(
+                  decoration: BoxDecoration(
                     borderRadius: BorderRadius.only(
-                        topRight: Radius.circular(25),
-                        topLeft: Radius.circular(25))),
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: SingleChildScrollView(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            // ! thats take a value i will send it from the model
-                            AnimeStars(
-                              starsValue: stars,
-                            ),
-                          ],
-                        ),
-                        const SizedBox(height: 10),
-                        Text(
-                          "Episodes",
-                          style: const TextStyle(
-                              color: cwhite,
-                              fontSize: 20,
-                              fontWeight: FontWeight.w500),
-                        ),
-                        const SizedBox(height: 5),
-                        SingleChildScrollView(
-                          scrollDirection: Axis.horizontal,
-                          child: Row(
-                            children: [
-                              EpisodesCon(
-                                episodeNum: episode1num,
-                                episode: episode1,
-                                episodeName: "Do You Belive In",
-                              ),
-                              EpisodesCon(
-                                episodeNum: episode2num,
-                                episode: episode2,
-                                episodeName: "Your Place In Heaven",
-                              ),
-                              EpisodesCon(
-                                episodeNum: episode3num,
-                                episode: episode3,
-                                episodeName: "The End Of Road",
-                              ),
-                            ],
-                          ),
-                        ),
-                        Text(
-                          "Plot",
-                          style: const TextStyle(
-                              color: cwhite,
-                              fontSize: 20,
-                              fontWeight: FontWeight.w500),
-                        ),
-                        Text(
-                          plot,
-                          style: TextStyle(
-                              color: cwhite.withOpacity(.5),
-                              fontSize: 12,
-                              fontWeight: FontWeight.w500,
-                              letterSpacing: .11),
-                          textAlign: TextAlign.justify,
-                        ),
-                      ],
+                      topLeft: Radius.circular(22),
+                      bottomRight: Radius.circular(22),
                     ),
                   ),
+                  child: Text('data'),
                 )),
+            leading: IconButton(
+                onPressed: () {
+                  Navigator.of(context).pop();
+                },
+                icon: Icon(CupertinoIcons.back, color: Colors.white)),
+            expandedHeight: 400,
+            scrolledUnderElevation: 0,
+            backgroundColor: cred.withOpacity(.3),
+            pinned: true,
+            flexibleSpace: FlexibleSpaceBar(
+              background: Image(
+                image: AssetImage(image),
+                width: double.infinity,
+                fit: BoxFit.cover,
+              ),
+            ),
+            title: Text(
+              type,
+              style: TextStyle(color: Colors.white),
+            ),
           ),
-          Positioned(
-              top: KHieght(context) * .512,
-              left: 10,
-              child: Text(
-                type,
-                style: const TextStyle(color: cwhite, fontSize: 15),
-              ))
+          SliverToBoxAdapter(
+            child: bodyView(context),
+          ),
         ],
       ),
     );
+  }
+
+  Widget bodyView(BuildContext context) {
+    return Padding(
+      padding: EdgeInsets.all(8.0.sp),
+      child: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                // ! thats take a value i will send it from the model
+                AnimeStars(
+                  starsValue: stars,
+                ),
+              ],
+            ),
+            SizedBox(height: 10.sp),
+            Text(
+              "Episodes",
+              style: TextStyle(
+                  color: cwhite, fontSize: 20.sp, fontWeight: FontWeight.w500),
+            ),
+            SizedBox(height: 5.sp),
+            SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  EpisodesCon(
+                    episodeNum: episode1num,
+                    episode: episode1,
+                    episodeName: "Do You Belive In",
+                  ),
+                  EpisodesCon(
+                    episodeNum: episode2num,
+                    episode: episode2,
+                    episodeName: "Your Place In Heaven",
+                  ),
+                  EpisodesCon(
+                    episodeNum: episode3num,
+                    episode: episode3,
+                    episodeName: "The End Of Road",
+                  ),
+                ],
+              ),
+            ),
+            Text(
+              "Plot",
+              style: TextStyle(
+                  color: cwhite, fontSize: 20.sp, fontWeight: FontWeight.w500),
+            ),
+            Text(
+              plot,
+              style: TextStyle(
+                  color: cwhite.withOpacity(.5),
+                  fontSize: 12.sp,
+                  fontWeight: FontWeight.w500,
+                  letterSpacing: .11),
+              textAlign: TextAlign.justify,
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Container Background(BuildContext context) {
+    return Container(
+        width: KWidth(context),
+        height: KHieght(context),
+        decoration: BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage(
+              image,
+            ),
+            fit: BoxFit.cover,
+          ),
+        ),
+        child: Align(
+            alignment: Alignment.bottomLeft,
+            child: Container(
+              decoration: BoxDecoration(
+                gradient: LinearGradient(colors: [
+                  Color.fromARGB(85, 0, 0, 0),
+                  cblack.withOpacity(.5),
+                ], begin: Alignment.topCenter, end: Alignment.bottomCenter),
+              ),
+            )));
   }
 }

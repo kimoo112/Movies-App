@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors, unused_import, file_names, sized_box_for_whitespace, non_constant_identifier_names
+// ignore_for_file: prefer_const_constructors, unused_import, file_names, sized_box_for_whitespace, non_constant_identifier_names, prefer_const_literals_to_create_immutables
 
 import 'package:awesome_snackbar_content/awesome_snackbar_content.dart';
 import 'package:flutter/cupertino.dart';
@@ -42,7 +42,6 @@ class _SignInScreenState extends State<SignInScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: cmain,
       body: Stack(
         children: [
           Container(
@@ -116,7 +115,7 @@ class _SignInScreenState extends State<SignInScreen> {
                   ),
                   AnimatedButton(
                     width: 280,
-                    text: 'SIGN UP',
+                    text: 'SIGN IN',
                     borderRadius: 15,
                     selectedGradientColor: LinearGradient(
                       colors: [
@@ -161,7 +160,7 @@ class _SignInScreenState extends State<SignInScreen> {
                           onPressed: () {
                             navigateToPR(SignUpScreen(), context);
                           },
-                          child: Text("Sign Up",
+                          child: Text("Sign UP",
                               style: TextStyle(color: cred, fontSize: 18)))
                     ],
                   )

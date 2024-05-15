@@ -16,8 +16,8 @@ class HomeModel {
       required this.episode2,
       required this.episode3,
       required this.episode1num,
-required this.episode2num,
-required this.episode3num,
+      required this.episode2num,
+      required this.episode3num,
       required this.detailsImg,
       required this.image,
       required this.name,
@@ -39,7 +39,8 @@ List<HomeModel> HomeList = [
       name: "name",
       stars: 4.0,
       type: "Action and Crime",
-      plot:""""Money Heist" also known as "La Casa de Papel," is a gripping Spanish television series that follows the story of a criminal mastermind known as "The Professor" and his team of eight skilled thieves. Their plan involves taking hostages and locking themselves inside the Royal Mint of Spain, manipulating the police and executing an audacious heist. As the heist unfolds, the series delves into themes of deception, loyalty, and the intricate strategies employed by both the thieves and the authorities. With each episode, the plot thickens, tension rises, and unexpected twists and turns keep viewers on the edge of their seats. "Money Heist" is renowned for its compelling characters, intricate storytelling, and a thrilling cat-and-mouse game between the criminals and the law enforcement agencies."""),
+      plot:
+          """"Money Heist" also known as "La Casa de Papel," is a gripping Spanish television series that follows the story of a criminal mastermind known as "The Professor" and his team of eight skilled thieves. Their plan involves taking hostages and locking themselves inside the Royal Mint of Spain, manipulating the police and executing an audacious heist. As the heist unfolds, the series delves into themes of deception, loyalty, and the intricate strategies employed by both the thieves and the authorities. With each episode, the plot thickens, tension rises, and unexpected twists and turns keep viewers on the edge of their seats. "Money Heist" is renowned for its compelling characters, intricate storytelling, and a thrilling cat-and-mouse game between the criminals and the law enforcement agencies."""),
   HomeModel(
       episode1: "assets/images/Do_You_Believe_In_Reincarnation.webp",
       episode1num: 2,
@@ -52,7 +53,8 @@ List<HomeModel> HomeList = [
       name: "name",
       stars: 4.0,
       type: "Action and Crime",
-      plot:""""Money Heist" also known as "La Casa de Papel," is a gripping Spanish television series that follows the story of a criminal mastermind known as "The Professor" and his team of eight skilled thieves. Their plan involves taking hostages and locking themselves inside the Royal Mint of Spain, manipulating the police and executing an audacious heist. As the heist unfolds, the series delves into themes of deception, loyalty, and the intricate strategies employed by both the thieves and the authorities. With each episode, the plot thickens, tension rises, and unexpected twists and turns keep viewers on the edge of their seats. "Money Heist" is renowned for its compelling characters, intricate storytelling, and a thrilling cat-and-mouse game between the criminals and the law enforcement agencies."""),
+      plot:
+          """"Money Heist" also known as "La Casa de Papel," is a gripping Spanish television series that follows the story of a criminal mastermind known as "The Professor" and his team of eight skilled thieves. Their plan involves taking hostages and locking themselves inside the Royal Mint of Spain, manipulating the police and executing an audacious heist. As the heist unfolds, the series delves into themes of deception, loyalty, and the intricate strategies employed by both the thieves and the authorities. With each episode, the plot thickens, tension rises, and unexpected twists and turns keep viewers on the edge of their seats. "Money Heist" is renowned for its compelling characters, intricate storytelling, and a thrilling cat-and-mouse game between the criminals and the law enforcement agencies.,Money Heist" also known as "La Casa de Papel," is a gripping Spanish television series that follows the story of a criminal mastermind known as "The Professor" and his team of eight skilled thieves. Their plan involves taking hostages and locking themselves inside the Royal Mint of Spain, manipulating the police and executing an audacious heist. As the heist unfolds, the series delves into themes of deception, loyalty, and the intricate strategies employed by both the thieves and the authorities. With each episode, the plot thickens, tension rises, and unexpected twists and turns keep viewers on the edge of their seats. "Money Heist" is renowned for its compelling characters, intricate storytelling, and a thrilling cat-and-mouse game between the criminals and the law enforcement agencies.Money Heist" also known as "La Casa de Papel," is a gripping Spanish television series that follows the story of a criminal mastermind known as "The Professor" and his team of eight skilled thieves. Their plan involves taking hostages and locking themselves inside the Royal Mint of Spain, manipulating the police and executing an audacious heist. As the heist unfolds, the series delves into themes of deception, loyalty, and the intricate strategies employed by both the thieves and the authorities. With each episode, the plot thickens, tension rises, and unexpected twists and turns keep viewers on the edge of their seats. "Money Heist" is renowned for its compelling characters, intricate storytelling, and a thrilling cat-and-mouse game between the criminals and the law enforcement agencies.Money Heist" also known as "La Casa de Papel," is a gripping Spanish television series that follows the story of a criminal mastermind known as "The Professor" and his team of eight skilled thieves. Their plan involves taking hostages and locking themselves inside the Royal Mint of Spain, manipulating the police and executing an audacious heist. As the heist unfolds, the series delves into themes of deception, loyalty, and the intricate strategies employed by both the thieves and the authorities. With each episode, the plot thickens, tension rises, and unexpected twists and turns keep viewers on the edge of their seats. "Money Heist" is renowned for its compelling characters, intricate storytelling, and a thrilling cat-and-mouse game between the criminals and the law enforcement agencies.Money Heist" also known as "La Casa de Papel," is a gripping Spanish television series that follows the story of a criminal mastermind known as "The Professor" and his team of eight skilled thieves. Their plan involves taking hostages and locking themselves inside the Royal Mint of Spain, manipulating the police and executing an audacious heist. As the heist unfolds, the series delves into themes of deception, loyalty, and the intricate strategies employed by both the thieves and the authorities. With each episode, the plot thickens, tension rises, and unexpected twists and turns keep viewers on the edge of their seats. "Money Heist" is renowned for its compelling characters, intricate storytelling, and a thrilling cat-and-mouse game between the criminals and the law enforcement agencies.Money Heist" also known as "La Casa de Papel," is a gripping Spanish television series that follows the story of a criminal mastermind known as "The Professor" and his team of eight skilled thieves. Their plan involves taking hostages and locking themselves inside the Royal Mint of Spain, manipulating the police and executing an audacious heist. As the heist unfolds, the series delves into themes of deception, loyalty, and the intricate strategies employed by both the thieves and the authorities. With each episode, the plot thickens, tension rises, and unexpected twists and turns keep viewers on the edge of their seats. "Money Heist" is renowned for its compelling characters, intricate storytelling, and a thrilling cat-and-mouse game between the criminals and the law enforcement agencies.Money Heist" also known as "La Casa de Papel," is a gripping Spanish television series that follows the story of a criminal mastermind known as "The Professor" and his team of eight skilled thieves. Their plan involves taking hostages and locking themselves inside the Royal Mint of Spain, manipulating the police and executing an audacious heist. As the heist unfolds, the series delves into themes of deception, loyalty, and the intricate strategies employed by both the thieves and the authorities. With each episode, the plot thickens, tension rises, and unexpected twists and turns keep viewers on the edge of their seats. "Money Heist" is renowned for its compelling characters, intricate storytelling, and a thrilling cat-and-mouse game between the criminals and the law enforcement agencies.Money Heist" also known as "La Casa de Papel," is a gripping Spanish television series that follows the story of a criminal mastermind known as "The Professor" and his team of eight skilled thieves. Their plan involves taking hostages and locking themselves inside the Royal Mint of Spain, manipulating the police and executing an audacious heist. As the heist unfolds, the series delves into themes of deception, loyalty, and the intricate strategies employed by both the thieves and the authorities. With each episode, the plot thickens, tension rises, and unexpected twists and turns keep viewers on the edge of their seats. "Money Heist" is renowned for its compelling characters, intricate storytelling, and a thrilling cat-and-mouse game between the criminals and the law enforcement agencies.Money Heist" also known as "La Casa de Papel," is a gripping Spanish television series that follows the story of a criminal mastermind known as "The Professor" and his team of eight skilled thieves. Their plan involves taking hostages and locking themselves inside the Royal Mint of Spain, manipulating the police and executing an audacious heist. As the heist unfolds, the series delves into themes of deception, loyalty, and the intricate strategies employed by both the thieves and the authorities. With each episode, the plot thickens, tension rises, and unexpected twists and turns keep viewers on the edge of their seats. "Money Heist" is renowned for its compelling characters, intricate storytelling, and a thrilling cat-and-mouse game between the criminals and the law enforcement agencies.Money Heist" also known as "La Casa de Papel," is a gripping Spanish television series that follows the story of a criminal mastermind known as "The Professor" and his team of eight skilled thieves. Their plan involves taking hostages and locking themselves inside the Royal Mint of Spain, manipulating the police and executing an audacious heist. As the heist unfolds, the series delves into themes of deception, loyalty, and the intricate strategies employed by both the thieves and the authorities. With each episode, the plot thickens, tension rises, and unexpected twists and turns keep viewers on the edge of their seats. "Money Heist" is renowned for its compelling characters, intricate storytelling, and a thrilling cat-and-mouse game between the criminals and the law enforcement agencies."""),
   HomeModel(
       episode1: "assets/images/Do_You_Believe_In_Reincarnation.webp",
       episode1num: 1,
@@ -65,15 +67,15 @@ List<HomeModel> HomeList = [
       name: "name",
       stars: 4.0,
       type: "Action and Crime",
-      plot:"""""Money Heist" also known as "La Casa de Papel," is a gripping Spanish television series that follows the story of a criminal mastermind known as "The Professor" and his team of eight skilled thieves. Their plan involves taking hostages and locking themselves inside the Royal Mint of Spain, manipulating the police and executing an audacious heist. As the heist unfolds, the series delves into themes of deception, loyalty, and the intricate strategies employed by both the thieves and the authorities. With each episode, the plot thickens, tension rises, and unexpected twists and turns keep viewers on the edge of their seats. "Money Heist" is renowned for its compelling characters, intricate storytelling, and a thrilling cat-and-mouse game between the criminals and the law enforcement agencies."""
-),
-HomeModel(
-     episode1: "assets/images/lucifar ep1.webp",
-      episode1num: 3,
-      episode2: "assets/images/lucifar ep2.webp",
-      episode2num: 7,
-      episode3: "assets/images/lucifar ep3.webp",
-      episode3num: 10,
+      plot:
+          """""Money Heist" also known as "La Casa de Papel," is a gripping Spanish television series that follows the story of a criminal mastermind known as "The Professor" and his team of eight skilled thieves. Their plan involves taking hostages and locking themselves inside the Royal Mint of Spain, manipulating the police and executing an audacious heist. As the heist unfolds, the series delves into themes of deception, loyalty, and the intricate strategies employed by both the thieves and the authorities. With each episode, the plot thickens, tension rises, and unexpected twists and turns keep viewers on the edge of their seats. "Money Heist" is renowned for its compelling characters, intricate storytelling, and a thrilling cat-and-mouse game between the criminals and the law enforcement agencies."""),
+  HomeModel(
+    episode1: "assets/images/lucifar ep1.webp",
+    episode1num: 3,
+    episode2: "assets/images/lucifar ep2.webp",
+    episode2num: 7,
+    episode3: "assets/images/lucifar ep3.webp",
+    episode3num: 10,
     detailsImg: 'assets/images/Lucifar poster.jpg',
     image: "assets/images/lucifer (1).png",
     name: "Lucifar",
@@ -81,5 +83,20 @@ HomeModel(
     type: "Action and Adventure",
     plot:
         "\"Lucifer\" is a popular TV series that revolves around the character Lucifer Morningstar, who is portrayed as the Devil himself. Tired of his role in Hell, Lucifer decides to leave his kingdom and move to Los Angeles. He opens a nightclub called Lux and enjoys a luxurious and carefree life.",
-)
+  ),
+  HomeModel(
+    episode1: "assets/images/lucifar ep1.webp",
+    episode1num: 3,
+    episode2: "assets/images/lucifar ep2.webp",
+    episode2num: 7,
+    episode3: "assets/images/lucifar ep3.webp",
+    episode3num: 10,
+    detailsImg: 'assets/images/Lucifar poster.jpg',
+    image: "assets/images/lucifer (1).png",
+    name: "Lucifar",
+    stars: 3.5,
+    type: "Action and Adventure",
+    plot:
+        "\"Lucifer\" is a popular TV series that revolves around the character Lucifer Morningstar, who is portrayed as the Devil himself. Tired of his role in Hell, Lucifer decides to leave his kingdom and move to Los Angeles. He opens a nightclub called Lux and enjoys a luxurious and carefree life.",
+  ),
 ];

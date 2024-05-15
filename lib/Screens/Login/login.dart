@@ -38,7 +38,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 child: Align(
                     alignment: Alignment.bottomLeft,
                     child: Container(
-                      decoration: const BoxDecoration(
+                      decoration:  BoxDecoration(
                         gradient: LinearGradient(
                             colors: [
                               Color.fromARGB(110, 0, 0, 0),

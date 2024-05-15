@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 import 'package:movies/Constants/colors.dart';
 
+import '../../Constants/theme.dart';
+
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({Key? key,required this.userName}) : super(key: key);
   final userName;
@@ -11,7 +13,7 @@ class ProfileScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: cmain,
+      backgroundColor: AppTheme.isDark?cmain:cmain2,
       
       body: Container(
         width: double.infinity,
